@@ -1,0 +1,17 @@
+# QE working files (never commit)
+tmp/
+pseudo/
+*.wfc*
+*.save/
+*.xml
+*.igk
+*.mix
+
+# Raw QE output
+*.out
+fort.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
