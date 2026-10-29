@@ -1,0 +1,49 @@
+&CONTROL
+  calculation  = 'vc-relax'
+  prefix       = 'aln'
+  outdir       = './tmp'
+  pseudo_dir   = './pseudo'
+  verbosity    = 'high'
+  etot_conv_thr = 1.0d-5
+  forc_conv_thr = 1.0d-4
+/
+
+&SYSTEM
+  ibrav       = 4
+  celldm(1)   = 5.877        ! a = 3.11 Angstrom -> 5.877 Bohr
+  celldm(3)   = 1.601        ! c/a = 4.98/3.11
+  nat         = 4
+  ntyp        = 2
+  ecutwfc     = 40
+  ecutrho     = 320
+  occupations = 'smearing'
+  smearing    = 'gaussian'
+  degauss     = 0.01
+/
+
+&ELECTRONS
+  conv_thr    = 1.0d-8
+  mixing_beta = 0.7
+/
+
+&IONS
+  ion_dynamics = 'bfgs'
+/
+
+&CELL
+  cell_dynamics = 'bfgs'
+  press         = 0.0
+/
+
+ATOMIC_SPECIES
+  Al  26.98  Al.pbesol-n-kjpaw_psl.1.0.0.UPF
+  N   14.01  N.pbesol-theos.UPF
+
+ATOMIC_POSITIONS crystal
+  Al  0.333333333  0.666666667  0.000000000
+  Al  0.666666667  0.333333333  0.500000000
+  N   0.333333333  0.666666667  0.382000000
+  N   0.666666667  0.333333333  0.882000000
+
+K_POINTS automatic
+  8 8 6 0 0 0

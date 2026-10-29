@@ -1,0 +1,38 @@
+&CONTROL
+  calculation = 'scf'
+  prefix      = 'aln'
+  outdir      = './tmp'
+  pseudo_dir  = './pseudo'
+  verbosity   = 'high'
+/
+
+&SYSTEM
+  ibrav       = 4
+  celldm(1)   = 5.8832        ! 示例：假设优化后略变小
+  celldm(3)   = 1.6004
+  nat         = 4
+  ntyp        = 2
+  ecutwfc     = 40
+  ecutrho     = 320
+  occupations = 'smearing'
+  smearing    = 'gaussian'
+  degauss     = 0.01
+/
+
+&ELECTRONS
+  conv_thr    = 1.0d-9
+  mixing_beta = 0.7
+/
+
+ATOMIC_SPECIES
+  Al  26.98  Al.pbesol-n-kjpaw_psl.1.0.0.UPF
+  N   14.01  N.pbesol-theos.UPF
+
+ATOMIC_POSITIONS (crystal)
+Al               0.3333333330        0.6666666670        0.0000142905
+Al               0.6666666670        0.3333333330        0.5000142905
+N                0.3333333330        0.6666666670        0.3819857095
+N                0.6666666670        0.3333333330        0.8819857095
+
+K_POINTS automatic
+  12 12 8 0 0 0
